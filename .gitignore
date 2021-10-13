@@ -5,6 +5,9 @@ __pycache__/
 .idea/
 data/
 model.pth
+example/output.png
+example/output_rec.png
+example/target.png
 
 # C extensions
 *.so
