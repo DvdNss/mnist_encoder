@@ -1,4 +1,3 @@
-import numpy as np
 from torchvision.transforms import ToTensor
 
 from model import Model
