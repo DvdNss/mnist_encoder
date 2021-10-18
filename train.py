@@ -15,15 +15,15 @@ print(model.model)
 loss = torch.nn.MSELoss()
 optimizer = torch.optim.Adam(model.model.parameters(), lr=1e-3)
 
-epoch = 10
-mask_prob = 30
+epoch = 15
+mask_prob = 25
 
 # Training model
 for _ in range(0, epoch):
     model.train(dataloader=train_dataloader, loss=loss, optimizer=optimizer, mask_prob=mask_prob, log_iter=60000)
     model.eval(dataloader=test_dataloader, loss=loss)
     model.eval(dataloader=test_dataloader, loss=loss, mask=True)
-    mask_prob += 30
+    mask_prob += 25 if mask_prob < 100 else 0
     print(f'Mask probability is now {mask_prob}%. ')
 
 # Save model
