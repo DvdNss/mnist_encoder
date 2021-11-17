@@ -176,7 +176,6 @@ class Model:
             rand = randint(0, len(eval_data)-1)
         else:
             rand = n_example
-        print(f"Using example {rand}. ")
 
         # Pull example and save it
         x, y = eval_data[rand][0], eval_data[rand][1]
@@ -189,7 +188,6 @@ class Model:
             img_pred, label_pred = self.model(x.to(self.device),
                                               torch.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]).type(torch.FloatTensor).to(
                                                   self.device))
-            print(f'Classic --> Target: {torch.argmax(y)} || Output: {torch.argmax(label_pred)}')
             img_pred = self.model.unflatten(img_pred)
             save_image(img_pred, "example/output.png")
 
@@ -203,9 +201,9 @@ class Model:
             img_pred, label_pred = self.model(x.to(self.device),
                                               torch.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]).type(torch.FloatTensor).to(
                                                   self.device))
-            print(f'Recursive --> Target: {torch.argmax(y)} || Output: {torch.argmax(label_pred)}')
             img_pred = self.model.unflatten(img_pred)
             save_image(img_pred, "example/output_rec.png")
-            print(f'--> Saved images in example/ . ')
 
-        return target, prediction
+        recursive_pred = torch.argmax(label_pred)
+
+        return target, prediction, recursive_pred
