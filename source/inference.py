@@ -7,7 +7,7 @@ from model import Model
 train_data, test_data, train_dataloader, test_dataloader = Model.load_mnist(transform=ToTensor(), batch_size=1)
 
 # Load model
-model = Model(load_model='model/model.pt', img_chan_size=100, global_chan_size=50)
+model = Model(load_model='../model/model.pt', img_chan_size=100, global_chan_size=50)
 print(f'Trainable parameters: {sum(p.numel() for p in model.model.parameters())}. ')
 
 # # Quick inference

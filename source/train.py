@@ -26,4 +26,4 @@ for _ in range(0, epoch):
     print(f'Mask probability is now {mask_prob}%. ')
 
 # Save model
-model.save('model/model.pt')
+model.save('../model/model.pt')

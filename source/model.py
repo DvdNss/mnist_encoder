@@ -47,8 +47,8 @@ class Model:
         """
 
         # Load datasets
-        train_data = datasets.MNIST(root="data", train=True, download=True, transform=transform)
-        test_data = datasets.MNIST(root="data", train=False, download=True, transform=transform)
+        train_data = datasets.MNIST(root="../data", train=True, download=True, transform=transform)
+        test_data = datasets.MNIST(root="../data", train=False, download=True, transform=transform)
 
         # Create dataloaders
         train_dataloader = DataLoader(train_data, batch_size=batch_size)
@@ -179,7 +179,7 @@ class Model:
 
         # Pull example and save it
         x, y = eval_data[rand][0], eval_data[rand][1]
-        save_image(x, "example/target.png")
+        save_image(x, "../example/target.png")
 
         # Preprocess input
         x, y = self.model.flatten(x), F.one_hot(torch.tensor([y]), num_classes=10).type(torch.FloatTensor)
@@ -189,7 +189,7 @@ class Model:
                                               torch.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]).type(torch.FloatTensor).to(
                                                   self.device))
             img_pred = self.model.unflatten(img_pred)
-            save_image(img_pred, "example/output.png")
+            save_image(img_pred, "../example/output.png")
 
         target = torch.argmax(y)
         prediction = torch.argmax(label_pred)
@@ -202,7 +202,7 @@ class Model:
                                               torch.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]).type(torch.FloatTensor).to(
                                                   self.device))
             img_pred = self.model.unflatten(img_pred)
-            save_image(img_pred, "example/output_rec.png")
+            save_image(img_pred, "../example/output_rec.png")
 
         recursive_pred = torch.argmax(label_pred)
 

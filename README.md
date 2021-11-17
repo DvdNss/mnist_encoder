@@ -80,11 +80,12 @@ pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 -f https://download.pyt
 ### Example
 
 1. Run the `train.py` script. Feel free to edit parameters like `channel sizes`, `epochs` or `learning rate`.
+
 ```python
 import torch.nn
 from torchvision.transforms import ToTensor
 
-from model import Model
+from source.model import Model
 
 # Load data & dataloader
 train_data, test_data, train_dataloader, test_dataloader = Model.load_mnist(transform=ToTensor(), batch_size=1)
@@ -117,7 +118,7 @@ model.save('model/model.pt')
 ```python
 from torchvision.transforms import ToTensor
 
-from model import Model
+from source.model import Model
 
 # Load data & dataloader
 train_data, test_data, train_dataloader, test_dataloader = Model.load_mnist(transform=ToTensor(), batch_size=1)
