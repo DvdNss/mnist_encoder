@@ -18,15 +18,15 @@ generate images that can be predicted with the correct labels.
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <ul>
+      <li><a href="#structure">Structure</a></li>
+      <li><a href="#example">Example</a></li>
+    </ul>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -57,10 +57,6 @@ pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 -f https://download.pyt
 <!-- USAGE EXAMPLES -->
 
 ## Usage
-
-### Prerequisites
-
-* CUDA and related tools (not necessary if you want to run with CPU)
 
 ### Structure
 * `example/`: contains inference outputs
