@@ -15,6 +15,13 @@
 
 ![alt text](resources/diag.png)
 
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+This project aims to create a multi-channel auto-encoder for MNIST dataset. We pass images (CH1) and labels (CH2) 
+as inputs and gradually mask the labels so the model can learn not only to predict the correct labels but also 
+generate images that can be predicted with the correct labels.
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -37,13 +44,6 @@
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
-
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
-
-This project aims to create a multi-channel auto-encoder for MNIST dataset.
-
 
 <!-- GETTING STARTED -->
 
@@ -76,6 +76,18 @@ pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 -f https://download.pyt
 ### Prerequisites
 
 * CUDA and related tools (not necessary if you want to run with CPU)
+
+### Structure
+* `example/`: contains inference outputs
+* `model/`: contains model .pt file
+* `resources/`: contains repo home image
+* `source/`:
+  * `mc_autoencoder.py`: model structure (structure, forward pass...)
+  * `model.py`: model methods (train, eval, save...)
+  * `train.py`: training script
+  * `inference.py`: eval and inference script
+* `utils/`:
+  * `device.py`: fast script for device availability (cpu or gpu -- just run `device.py`)
 
 ### Example
 
@@ -137,40 +149,11 @@ input : ![](example/target1.png) \
 output : ![](example/output1.png) \
 label : 8
 
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any
-contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
 <!-- CONTACT -->
 
 ## Contact
 
 David NAISSE - [@LinkedIn](https://www.linkedin.com/in/davidnaisse/) - private.david.naisse@gmail.com
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## Acknowledgements
-
-* None
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
