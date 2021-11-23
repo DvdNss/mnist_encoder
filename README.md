@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DvdNss/mnist_encoder/main/resources/diag.png?token=AL7HZ2UGFXC37CPJXXKOMK3BTUMT4" />
+  <img src="https://raw.githubusercontent.com/DvdNss/mnist_encoder/main/resources/diag.png" />
 </p>
 
 <!-- ABOUT THE PROJECT -->
@@ -132,6 +132,12 @@ model.infer(eval_data=test_data, random=True)
 input : ![](example/target1.png) \
 output : ![](example/output1.png) \
 label : 8
+
+4. Use the model with GUI
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DvdNss/mnist_encoder/main/resources/img.PNG" />
+</p>
 
 <!-- CONTACT -->
 
