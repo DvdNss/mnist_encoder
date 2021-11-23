@@ -135,6 +135,10 @@ label : 8
 
 4. Use the model with GUI
 
+```shell
+cd source/
+streamlit run app.py
+```
 <p align="center">
   <img src="https://raw.githubusercontent.com/DvdNss/mnist_encoder/main/resources/img.PNG" />
 </p>
