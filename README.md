@@ -1,4 +1,6 @@
-![alt text](resources/diag.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DvdNss/mnist_encoder/main/resources/diag.png?token=AL7HZ2VP6KJYOHL7OMR6BC3BTTUK6" />
+</p>
 
 <!-- ABOUT THE PROJECT -->
 
