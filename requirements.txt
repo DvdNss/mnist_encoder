@@ -3,3 +3,4 @@ tqdm
 numpy~=1.21.2
 torch
 torchvision
+streamlit
