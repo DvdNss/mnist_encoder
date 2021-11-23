@@ -70,6 +70,7 @@ pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 -f https://download.pyt
   * `model.py`: model methods (train, eval, save...)
   * `train.py`: training script
   * `inference.py`: eval and inference script
+  * `app.py`: project GUI
 * `utils/`:
   * `device.py`: fast script for device availability (cpu or gpu -- just run `device.py`)
 
