@@ -34,7 +34,7 @@ class Model:
 
         # Load model with path if needed
         if load_model != "":
-            self.model.load_state_dict(torch.load(load_model))
+            self.model.load_state_dict(torch.load(load_model, map_location=torch.device(self.device)))
 
         self.args = kwargs
 
