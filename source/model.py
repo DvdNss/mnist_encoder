@@ -158,7 +158,7 @@ class Model:
         torch.save(self.model.state_dict(), f=path)
         print(f'Saved model to {path}. ')
 
-    def infer(self, eval_data, random: bool = True, n_example: int = 0):
+    def infer(self, eval_data, path: str = '../example/', random: bool = True, n_example: int = 0):
         """
         Quick inferance example with img save.
 
@@ -173,13 +173,13 @@ class Model:
 
         # Choose random example if needed
         if random:
-            rand = randint(0, len(eval_data)-1)
+            rand = randint(0, len(eval_data) - 1)
         else:
             rand = n_example
 
         # Pull example and save it
         x, y = eval_data[rand][0], eval_data[rand][1]
-        save_image(x, "../example/target.png")
+        save_image(x, f"{path}target.png")
 
         # Preprocess input
         x, y = self.model.flatten(x), F.one_hot(torch.tensor([y]), num_classes=10).type(torch.FloatTensor)
@@ -189,7 +189,7 @@ class Model:
                                               torch.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]).type(torch.FloatTensor).to(
                                                   self.device))
             img_pred = self.model.unflatten(img_pred)
-            save_image(img_pred, "../example/output.png")
+            save_image(img_pred, f"{path}output.png")
 
         target = torch.argmax(y)
         prediction = torch.argmax(label_pred)
@@ -202,7 +202,7 @@ class Model:
                                               torch.tensor([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]).type(torch.FloatTensor).to(
                                                   self.device))
             img_pred = self.model.unflatten(img_pred)
-            save_image(img_pred, "../example/output_rec.png")
+            save_image(img_pred, f"{path}output_rec.png")
 
         recursive_pred = torch.argmax(label_pred)
 
