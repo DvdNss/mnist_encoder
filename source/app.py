@@ -20,14 +20,16 @@ def load_model_and_data():
 
 
 # Init page config
-page_config = st.set_page_config(page_title='Multi-Channel Auto-Encoder for MNIST')
+page_config = st.set_page_config(
+    page_title='Multi-Channel Auto-Encoder for MNIST')
 title = st.title('Multi-Channel Auto-Encoder for MNIST')
 
 # Load data and model with cache
 test_data, model = load_model_and_data()
 
 c1, c2, c3 = st.columns([1, 2, 1])
-c2.image('resources/diag.png', width=300, use_column_width=True)
+c2.image('resources/diag.png', caption='[GitHub](https://github.com/DvdNss/mnist_encoder)', width=300,
+         use_column_width=True)
 
 # Choose example number
 example = st.number_input('', min_value=0, max_value=len(test_data), help='Choose an example in MNIST test data. ')
