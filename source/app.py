@@ -32,7 +32,8 @@ c2.image('resources/diag.png', caption='[GitHub](https://github.com/DvdNss/mnist
          use_column_width=True)
 
 # Choose example number
-example = st.number_input('', min_value=0, max_value=len(test_data), help='Choose an example in MNIST test data. ')
+example = st.number_input('', min_value=0, max_value=len(test_data), value=86,
+                          help='Choose an example in MNIST test data. ')
 
 # Inference on given example with model
 target, prediction, recursive_pred = model.infer(eval_data=test_data, path='example/', n_example=example + 1,
