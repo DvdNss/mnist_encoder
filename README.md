@@ -4,12 +4,14 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+## About The Project - 
 
 This project aims to create a multi-channel auto-encoder for MNIST dataset using PyTorch. We pass images (CH1) and labels (CH2) 
 as inputs and gradually mask the labels so the model can learn not only to predict the correct labels but also 
 generate images that can be predicted with the correct labels. Each channel has its own encoder, and the model 
 has a global encoder encoding each encoded channel, same for the decoding way.
+
+[__Test it here!__](https://share.streamlit.io/dvdnss/mnist_encoder/main/source/app.py)
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
